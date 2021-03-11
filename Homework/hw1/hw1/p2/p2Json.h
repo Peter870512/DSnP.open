@@ -20,6 +20,7 @@ public:
    // TODO: define constructor & member functions on your own
    JsonElem() {}
    JsonElem(const string& k, int v): _key(k), _value(v) {}
+   int get_value();
 
    friend ostream& operator << (ostream&, const JsonElem&);
 
@@ -32,7 +33,14 @@ class Json
 {
 public:
    // TODO: define constructor & member functions on your own
+   Json() {}
    bool read(const string&);
+   void print_content();
+   void print_sum();
+   void print_average();
+   void print_max();
+   void print_min();
+   void add_element(JsonElem);
 
 private:
    vector<JsonElem>       _obj;  // DO NOT change this definition.
